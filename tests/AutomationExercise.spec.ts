@@ -45,7 +45,7 @@ test.describe('Automation Exercise Tests', () => {
             test('To validate user registration(Form Submission) using registered email', async ({ page }) => {
                 await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Name').fill('test');
                 await page.locator('form').filter({ hasText: 'Signup' }).getByPlaceholder('Email Address').fill('test@gmail.com');
-                await page.getByRole('button', { name: 'Signup' }).click();
+                await page.getByRole('button', { name: 'Signup' }).click(); 
                 await expect(page.getByText('Email Address already exist!')).toBeVisible();
             });
         });
